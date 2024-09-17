@@ -1,5 +1,5 @@
 const numeroSenha = document.querySelector('.parametro-senha__texto');
-let tamanhoSenha = 12;
+let tamanhoSenha = 60;
 numeroSenha.textContent = tamanhoSenha;
 const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
@@ -64,13 +64,13 @@ function geraSenha() {
 function classificaSenha(tamanhoAlfabeto){
     let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
     console.log(entropia);
-    forcaSenha.classList.remove('fraca','media','forte');
+    forcaSenha.classList.remove('ruim','mediana','muito boa');
     if (entropia > 57){
-        forcaSenha.classList.add('forte');
+        forcaSenha.classList.add('muito boa');
     } else if (entropia > 35 && entropia < 57 ) {
-        forcaSenha.classList.add('media');
+        forcaSenha.classList.add('mediana');
     } else if (entropia <= 35){
-        forcaSenha.classList.add('fraca');
+        forcaSenha.classList.add('ruim');
     }
     const valorEntropia = document.querySelector('.entropia');
     valorEntropia.textContent = "Um computador pode levar até " + Math.floor(2**entropia/(100e6*60*60*24)) + " dias para descobrir essa senha.";
