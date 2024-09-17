@@ -1,5 +1,5 @@
 const numeroSenha = document.querySelector('.parametro-senha__texto');
-let tamanhoSenha = 60;
+let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
 const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
@@ -22,7 +22,7 @@ function diminuiTamanho() {
     geraSenha();
 }
 function aumentaTamanho() {
-    if (tamanhoSenha < 20) {
+    if (tamanhoSenha < 60) {
         // tamanhoSenha = tamanhoSenha+1;
         tamanhoSenha++;
     }
